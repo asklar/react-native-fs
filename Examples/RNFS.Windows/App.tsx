@@ -33,7 +33,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 
-const App: () => React$Node = () => {
+const App = () => {
 
   const [mkdirParam, setMkdirParam] = useState('');
 
@@ -306,10 +306,10 @@ const App: () => React$Node = () => {
       progress: () => {console.log('It is going!');},
       progressDivider: 7,
     }).promise.then((r) => {
-      console.log('Successfully Downloaded File', r.jobId + ' ' + r.statusCode + ' ' + r.bytesWritten);
+      alert(`Successfully Downloaded File. JobID=${r.jobId} StatusCode=${r.statusCode} BytesWritten=${r.bytesWritten}`);
     })
     .catch((err) => {
-      console.log(err.message);
+      alert(err.message);
     });
 
   }

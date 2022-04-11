@@ -127,6 +127,14 @@ struct ReactContextMock : implements<ReactContextMock, IReactContext> {
     VerifyElseCrashSz(false, "Not implemented");
   }
 
+  IInspectable JSRuntime() {
+      throw std::invalid_argument("jsruntime");
+  }
+
+  IReactSettingsSnapshot SettingsSnapshot() {
+      throw std::invalid_argument("settings snapshot");
+  }
+
   void DispatchEvent(
       xaml::FrameworkElement const & /*view*/,
       hstring const & /*eventName*/,

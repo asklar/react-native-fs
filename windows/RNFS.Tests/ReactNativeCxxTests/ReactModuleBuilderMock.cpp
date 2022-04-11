@@ -6,8 +6,18 @@
 #include "JSValue.h"
 #include "JSValueTreeWriter.h"
 
+
 namespace winrt::Microsoft::ReactNative {
 
+    Microsoft::ReactNative::IReactPropertyNamespace ReactPropertyBagHelper::GetNamespace(const winrt::param::hstring&) {
+        throw std::invalid_argument("not implemented");
+    }
+
+    Microsoft::ReactNative::IReactPropertyName ReactPropertyBagHelper::GetName(const Microsoft::ReactNative::IReactPropertyNamespace &, const winrt::param::hstring&) {
+        throw std::invalid_argument("not implemented");
+    }
+
+    
 //===========================================================================
 // ReactModuleBuilderMock implementation
 //===========================================================================
